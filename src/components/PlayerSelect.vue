@@ -1,7 +1,7 @@
 <template lang="html">
-  <select>
+  <select @change="playerSelected">
     <option disabled option selected='selected'>Select Player</option>
-    <option v-for="(player, index) in players">{{ player.strPlayer }}</option>
+    <option v-for="(player, index) in players" :value="index">{{ player.strPlayer }}</option>
   </select>
 </template>
 
@@ -10,7 +10,13 @@ import { eventBus } from '../main.js';
 
 export default {
   name: 'player-select',
-  props: ['players']
+  props: ['players'],
+  methods: {
+    playerSelected(e) {
+      const selectedIndex = e.target.value;
+      eventBus.$emit('player-selected', selectedIndex);
+    }
+  }
 }
 </script>
 
