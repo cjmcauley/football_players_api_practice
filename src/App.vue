@@ -1,7 +1,8 @@
 <template lang="html">
-<div >
-  <h1>Players</h1>
+  <div >
+    <h1 align="center">Arsenal FC Squad 2019/20</h1>
     <player-select :players="players" />
+    <hr>
     <player-info :player="selectedPlayer" />
   </div>
 </template>
@@ -35,5 +36,20 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
+hr{
+  border: 3px solid #9C824A;
+  width: 90%;
+}
+h1 {
+  font-family: antique-olive-nord, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 66px;
+  background-color: black;
+  color: white;
+}
+body{
+  background-color: black;
+}
 </style>
