@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       players: [],
-      selectedPlayer: null
+      selectedPlayer: null,
+      team: []
     };
   },
   mounted(){
@@ -31,14 +32,18 @@ export default {
     fetch('https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Arsenal')
     .then(result => result.json())
     .then(players => players = players.player)
-    .then(players => this.players = players)
+    .then(players => this.players = players),
+    fetch('https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604')
+    .then(result => result.json())
+    .then(team => team = team.teams)
+    .then(team => this.team = team)
   }
 }
 </script>
 
 <style lang="css">
 hr{
-  border: 3px solid #9C824A;
+  border: 1px solid #469FB9;
   width: 90%;
 }
 h1 {
@@ -50,6 +55,5 @@ h1 {
   color: white;
 }
 body{
-  background-color: black;
 }
 </style>
