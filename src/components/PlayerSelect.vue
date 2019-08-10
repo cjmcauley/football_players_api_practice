@@ -28,10 +28,11 @@ select {
 .custom-select {
   font-family: antique-olive-nord, sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   color: white;
-  background-color: black;
-  width: 40%;
+  background-color: #EE4808;
+  border: none;
+  width: 30%;
   height: 40px;
 }
 </style>

@@ -1,6 +1,9 @@
 <template lang="html">
-  <div >
-    <h1 align="center">Arsenal FC Squad 2019/20</h1>
+  <div>
+    <header>
+      <club-info :club="club[0]" />
+  </header>
+      <hr>
     <player-select :players="players" />
     <hr>
     <player-info :player="selectedPlayer" />
@@ -11,18 +14,20 @@
 import { eventBus } from './main.js';
 import PlayerSelect from './components/PlayerSelect.vue'
 import PlayerInfo from './components/PlayerInfo.vue'
+import ClubInfo from './components/ClubInfo.vue'
 
 export default {
   name: 'app',
   components: {
     'player-select': PlayerSelect,
-    'player-info': PlayerInfo
+    'player-info': PlayerInfo,
+    'club-info': ClubInfo
   },
   data() {
     return {
       players: [],
       selectedPlayer: null,
-      team: []
+      club: []
     };
   },
   mounted(){
@@ -36,15 +41,14 @@ export default {
     fetch('https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604')
     .then(result => result.json())
     .then(team => team = team.teams)
-    .then(team => this.team = team)
+    .then(club => this.club = club)
   }
 }
 </script>
 
 <style lang="css">
 hr{
-  border: 1px solid #469FB9;
-  width: 90%;
+  border: 1px solid black;
 }
 h1 {
   font-family: antique-olive-nord, sans-serif;
@@ -54,6 +58,7 @@ h1 {
   background-color: black;
   color: white;
 }
-body{
+header{
+  background-color: black;
 }
 </style>
