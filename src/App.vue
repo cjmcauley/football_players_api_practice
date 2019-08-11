@@ -2,10 +2,10 @@
   <div>
     <header>
       <club-info :club="club[0]" />
-  </header>
-      <hr>
+    </header>
+    <br>
     <player-select :players="players" />
-    <hr>
+    <br>
     <player-info :player="selectedPlayer" />
   </div>
 </template>
@@ -48,17 +48,17 @@ export default {
 
 <style lang="css">
 hr{
-  border: 1px solid black;
+  border: 5px solid #469fb9;
 }
 h1 {
   font-family: antique-olive-nord, sans-serif;
   font-weight: 400;
   font-style: italic;
   font-size: 66px;
-  background-color: black;
   color: white;
 }
 header{
-  background-color: black;
+  background-color: #469fb9;
+  border-radius: 5px;
 }
 </style>

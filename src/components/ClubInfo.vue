@@ -1,8 +1,8 @@
 <template lang="html">
-  <div class="club-info">
+  <div v-if="club" class="club-info">
     <div class="club-name">
 
-      <h1>{{ club.strTeam }}</h1>
+      <h1><a href="http://localhost:8080/" class="header-link">{{ club.strTeam }}</a></h1>
     </div>
     <div class="logo-div">
 
@@ -33,5 +33,9 @@
 }
 .logo-div{
   width: 10%;
+}
+.header-link{
+  color: white;
+  text-decoration: none;
 }
 </style>

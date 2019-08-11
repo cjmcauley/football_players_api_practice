@@ -26,9 +26,9 @@ select {
   margin: 0 auto;
 }
 .custom-select {
-  font-family: antique-olive-nord, sans-serif;
+  font-family: antique-olive, sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
   color: white;
   background-color: #EE4808;
   border: none;
